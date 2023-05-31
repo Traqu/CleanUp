@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 
 public class Main {
     public static void main(String[] args) {
+        Gui gui = new Gui();
         final String dayzLocalPath = System.getProperty("user.home") + "\\AppData\\Local\\DayZ";
         File file = new File(dayzLocalPath);
         File[] files = file.listFiles();
@@ -29,9 +30,23 @@ public class Main {
         String formattedTotalSize = df.format(totalSizeInMB);
 
         if (size == 0)
-            System.out.println("Nothing was removed");
+            gui.getjTextField().setText("Nothing was removed");
         else
-            System.out.println("\nRemoved: " + formattedTotalSize + " MB of data.");
+            gui.getjTextField().setText("Removed: " + formattedTotalSize + " MB of data.");
+
+        try {
+            Thread.sleep(2200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        gui.getjTextField().setText("Closing the application");
+        try {
+            Thread.sleep(700);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.exit(0);
 
     }
 }
