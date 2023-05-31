@@ -27,6 +27,11 @@ public class Main {
         double totalSizeInMB = (double) size / (1024 * 1024);
         DecimalFormat df = new DecimalFormat("#.##");
         String formattedTotalSize = df.format(totalSizeInMB);
-        System.out.println("\nRemoved: " + formattedTotalSize + " MB of data.");
+
+        if (size == 0)
+            System.out.println("Nothing was removed");
+        else
+            System.out.println("\nRemoved: " + formattedTotalSize + " MB of data.");
+
     }
 }
