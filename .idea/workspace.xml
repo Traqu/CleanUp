@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="created path variable" />
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="created path variable">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +31,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
@@ -57,6 +63,7 @@
       <workItem from="1685553824333" duration="102000" />
       <workItem from="1685553937924" duration="551000" />
       <workItem from="1685554571239" duration="903000" />
+      <workItem from="1685555494994" duration="878000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
