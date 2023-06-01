@@ -10,6 +10,9 @@ public class Main {
         File file = new File(dayzLocalPath);
         File[] files = file.listFiles();
         long size = 0;
+        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat dfTiny = new DecimalFormat("#.###");
+        double tmpSIZE;
 
         try {
             for (File content : files) {
@@ -17,6 +20,12 @@ public class Main {
                     size += Files.size(content.toPath());
                     if (content.delete())
                         System.out.println("Removed: " + content.getName());
+                    tmpSIZE = (double) size / (1024 * 1024);
+                    if (size < 10000) {
+                        gui.getjTextField().setText("Removed: " + dfTiny.format(tmpSIZE) + " MB of data.");
+                    } else {
+                        gui.getjTextField().setText("Removed: " + df.format(tmpSIZE) + " MB of data.");
+                    }
                 }
             }
         } catch (NullPointerException e) {
@@ -26,13 +35,11 @@ public class Main {
         }
 
         double totalSizeInMB = (double) size / (1024 * 1024);
-        DecimalFormat df = new DecimalFormat("#.##");
         String formattedTotalSize = df.format(totalSizeInMB);
 
         if (size == 0)
             gui.getjTextField().setText("Nothing was removed");
-        else
-            gui.getjTextField().setText("Removed: " + formattedTotalSize + " MB of data.");
+
 
         try {
             Thread.sleep(2200);

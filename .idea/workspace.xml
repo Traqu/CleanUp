@@ -10,10 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="created path variable">
-      <change afterPath="$PROJECT_DIR$/src/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DayZ_garbage_collector_jar/DayZ-garbage_collector.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DayZ-garbage_collector/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/DayZgarbagecollector.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +82,7 @@
       <workItem from="1685555494994" duration="2900000" />
       <workItem from="1685560122662" duration="796000" />
       <workItem from="1685560962841" duration="320000" />
+      <workItem from="1685640891906" duration="609000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
