@@ -34,9 +34,6 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        double totalSizeInMB = (double) size / (1024 * 1024);
-        String formattedTotalSize = df.format(totalSizeInMB);
-
         if (size == 0)
             gui.getjTextField().setText("Nothing was removed");
 

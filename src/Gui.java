@@ -27,7 +27,7 @@ public class Gui extends JFrame {
         jTextField.setFont(font);
 
 
-        ImageIcon logo = new ImageIcon("resources/icons/logo.png");
+        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("icons/logo.jpg"));
         this.setIconImage(logo.getImage());
     }
 
