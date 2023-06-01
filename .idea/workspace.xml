@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="created path variable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +94,8 @@
       <workItem from="1685642799068" duration="825000" />
       <workItem from="1685644872832" duration="3000" />
       <workItem from="1685644967429" duration="16000" />
+      <workItem from="1685645004038" duration="280000" />
+      <workItem from="1685645297441" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
