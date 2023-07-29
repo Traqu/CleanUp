@@ -54,6 +54,7 @@ public class GUI extends JFrame {
         mainTextField.setHorizontalAlignment(0);
         mainTextField.setFont(new Font("Baghdad", Font.BOLD, 12));
         mainTextField.setPreferredSize(new Dimension(0, TEXTPANEL_HEIGHT));
+        mainTextField.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createDashedBorder(new Color(0, 0, 0, 50), 1.05f, 1000, 1, false), BorderFactory.createRaisedBevelBorder()));
         textPanel.add(mainTextField);
 
 
