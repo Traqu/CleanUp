@@ -37,9 +37,8 @@ public class Main {
         }
 
         List<String> selectedGames = gui.getSelectedGames();
-        System.out.println("Selected games are:");
         for (String selectedGame : selectedGames) {
-            System.out.println(selectedGame);
+            //TODO
         }
 
         gui.getMainTextField().setText("Counting total Dayz files size");
