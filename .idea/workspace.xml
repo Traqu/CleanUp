@@ -9,8 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Added `font to all` method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Added reflection for JCheckBoxes, that allows adding them all at once to certain JPanel by using dedicated method.">
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +133,7 @@
       <workItem from="1690473290295" duration="2000" />
       <workItem from="1690575704955" duration="4271000" />
       <workItem from="1690580027263" duration="12942000" />
-      <workItem from="1690636990209" duration="7255000" />
+      <workItem from="1690636990209" duration="7624000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -213,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690641546384</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added reflection for JCheckBoxes, that allows adding them all at once to certain JPanel by using dedicated method.">
+      <created>1690645171755</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690645171755</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +245,7 @@
     <MESSAGE value="Rollback" />
     <MESSAGE value="Added style to the test field" />
     <MESSAGE value="Added `font to all` method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added `font to all` method" />
+    <MESSAGE value="Added reflection for JCheckBoxes, that allows adding them all at once to certain JPanel by using dedicated method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added reflection for JCheckBoxes, that allows adding them all at once to certain JPanel by using dedicated method." />
   </component>
 </project>

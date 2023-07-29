@@ -140,7 +140,11 @@ public class GUI extends JFrame {
     private void addAllChechboxes(JPanel panel) {
         Class<? extends GUI> guiClass = this.getClass();
         Field[] declaredFields = guiClass.getDeclaredFields();
+        List<Boolean> accessibilities = new ArrayList<>();
+
         for (Field declaredField : declaredFields) {
+            accessibilities.add(declaredField.isAccessible());
+            declaredField.setAccessible(true);
             if (declaredField.getType().getName().contains("JCheckBox")) {
                 try {
                     declaredField.setAccessible(true);
@@ -150,6 +154,9 @@ public class GUI extends JFrame {
                     e.printStackTrace();
                 }
             }
+        }
+        for (int i = 0; i < declaredFields.length; i++) {
+            declaredFields[i].setAccessible(accessibilities.get(i));
         }
     }
 
