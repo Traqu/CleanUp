@@ -5,10 +5,21 @@ import java.text.DecimalFormat;
 
 public class Main {
     public static void main(String[] args) {
-        Gui gui = new Gui();
-        final String dayzLocalPath = System.getProperty("user.home") + "\\AppData\\Local\\DayZ";
-        File file = new File(dayzLocalPath);
-        File[] files = file.listFiles();
+
+        GUI gui = new GUI();
+        gui.setVisible(true);
+
+        final String COMMON_PATH_PART = File.separator.concat("AppData").concat(File.separator).concat("Local").concat(File.separator);
+        final String USER_HOME = System.getProperty("user.home");
+        final String COMMON_PATH = USER_HOME + COMMON_PATH_PART;
+        final String DAYZ_LOCAL_PATH = COMMON_PATH + "DayZ";
+        final String CIV_VI_LOCAL_PATH = COMMON_PATH + "Firaxis Games\\Sid Meier's Civilization VI\\Logs";
+
+        File fileDayz = new File(DAYZ_LOCAL_PATH);
+        File fileCivilizationVI = new File(CIV_VI_LOCAL_PATH);
+        File[] filesDayz = fileDayz.listFiles();
+        File[] filesCivVI = fileCivilizationVI.listFiles();
+
         boolean anythingRemoved = false;
         long size = 0;
         DecimalFormat df = new DecimalFormat("#.##");
@@ -18,16 +29,23 @@ public class Main {
         long tmpTotalSize = 0;
         double totalSize = 0;
 
-        gui.getjTextField().setText("Counting total files size");
+        gui.getMainTextField().setText("Counting total Dayz files size");
 
         try {
-            for (File fileSize : files) {
+            //Civilization VI
+            for(File fileSize : filesCivVI){
+                System.out.println(fileSize);
+                tmpTotalSize += Files.size(fileSize.toPath());
+                fileSize.delete();
+            }
+            //DayZ
+            for (File fileSize : filesDayz) {
                 if (!fileSize.isDirectory()) {
                     tmpTotalSize += Files.size(fileSize.toPath());
                     totalSize = (double) tmpTotalSize / (1024 * 1024);
                 }
             }
-            for (File content : files) {
+            for (File content : filesDayz) {
                 if (!content.isDirectory()) {
                     size += Files.size(content.toPath());
                     if (content.delete()) {
@@ -36,9 +54,11 @@ public class Main {
                     }
                     removedSize = (double) size / (1024 * 1024);
                     if (size < 10000) {
-                        gui.getjTextField().setText("Removed: " + dfTiny.format(removedSize) + "/" + dfTiny.format(totalSize) + " MB of data.");
+                        gui.getMainTextField().setText("Removed: " + dfTiny.format(removedSize) + "/" + dfTiny.format(totalSize) + " MB of data.");
+                        sleepFor(10);
                     } else {
-                        gui.getjTextField().setText("Removed: " + df.format(removedSize) + "/" + df.format(totalSize) + " MB of data.");
+                        gui.getMainTextField().setText("Removed: " + df.format(removedSize) + "/" + df.format(totalSize) + " MB of data.");
+                        sleepFor(10);
                     }
                 }
             }
@@ -50,25 +70,24 @@ public class Main {
 
         if (size == 0) {
             if (anythingRemoved) {
-                gui.getjTextField().setText("Only empty files were removed");
+                gui.getMainTextField().setText("Only empty filesDayz were removed");
             } else {
-                gui.getjTextField().setText("Nothing was removed");
+                gui.getMainTextField().setText("Nothing was removed");
             }
         }
 
+        sleepFor(2200);
+        gui.getMainTextField().setText("Closing the application");
+        sleepFor(700);
+
+        //System.exit(0);
+    }
+
+    private static void sleepFor(int timeMs) {
         try {
-            Thread.sleep(2200);
+            Thread.sleep(timeMs);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        gui.getjTextField().setText("Closing the application");
-        try {
-            Thread.sleep(700);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        System.exit(0);
-
     }
 }
