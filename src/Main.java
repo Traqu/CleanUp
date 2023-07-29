@@ -45,6 +45,7 @@ public class Main {
         gui.getMainTextField().setText("Counting total Dayz files size");
 
 
+
         try {
             //Civilization VI
             for(File fileSize : filesCivVI){

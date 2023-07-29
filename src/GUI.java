@@ -103,6 +103,7 @@ public class GUI extends JFrame {
     }
 
 
+
     private void setFocusableFalseForAllComponents(Container container) {
         Component[] components = container.getComponents();
         for (Component component : components) {
