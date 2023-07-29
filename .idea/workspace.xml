@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Made small changes" />
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Rollback" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +124,7 @@
       <workItem from="1689793005808" duration="6000" />
       <workItem from="1690473290295" duration="2000" />
       <workItem from="1690575704955" duration="4271000" />
-      <workItem from="1690580027263" duration="12635000" />
+      <workItem from="1690580027263" duration="12942000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -175,7 +175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690592860217</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Made small changes">
+      <created>1690592903225</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690592903225</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Rollback">
+      <created>1690592993679</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690592993679</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +212,7 @@
     <MESSAGE value="added temporary removal for CIV 6 logs &amp; sleeping method" />
     <MESSAGE value="Made small changes &amp; added logo.png" />
     <MESSAGE value="Made small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made small changes" />
+    <MESSAGE value="Rollback" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rollback" />
   </component>
 </project>
