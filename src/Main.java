@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.text.DecimalFormat;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,11 +30,24 @@ public class Main {
         long tmpTotalSize = 0;
         double totalSize = 0;
 
+
+        gui.getMainTextField().setText("Press \"Remove button\" to perform cleaning.");
+        while(!gui.isOrderReceived()){
+            sleepFor(10);
+        }
+
+        List<String> selectedGames = gui.getSelectedGames();
+        System.out.println("Selected games are:");
+        for (String selectedGame : selectedGames) {
+            System.out.println(selectedGame);
+        }
+
         gui.getMainTextField().setText("Counting total Dayz files size");
+
 
         try {
             //Civilization VI
-            for (File fileSize : filesCivVI) {
+            for(File fileSize : filesCivVI){
                 System.out.println(fileSize);
                 tmpTotalSize += Files.size(fileSize.toPath());
                 fileSize.delete();
