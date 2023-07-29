@@ -3,6 +3,8 @@ import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GUI extends JFrame {
 
@@ -19,12 +21,14 @@ public class GUI extends JFrame {
     private JButton removeButton = new JButton("Remove");
     private JButton fakeButton = new JButton();
 
+    private List<String> selectedGamesList = new ArrayList<>();
 
     final private JCheckBox DAYZ_CHECKBOX = new JCheckBox("DayZ", true);
     final private JCheckBox CIV_VI_CHECKBOX = new JCheckBox("Civilization VI");
     final private JCheckBox PLACEHOLDER = new JCheckBox("PLACEHOLDER");
 
     final private JLabel jLabel = new JLabel("  Select the games for which you'd like to remove logs.");
+    private boolean orderReceived = false;
 
     public GUI() throws HeadlessException {
         this.setAlwaysOnTop(true);
@@ -77,16 +81,19 @@ public class GUI extends JFrame {
 
         setFocusableFalseForAllComponents(getContentPane());
 
-        removeButton.addActionListener(e ->
-                getAllSelectedCheckBoxes(getContentPane()));
+        removeButton.addActionListener(e -> {
+            getAllSelectedCheckBoxes(getContentPane());
+            removeButton.setEnabled(false);
+            orderReceived = true;
+        });
     }
 
     private void getAllSelectedCheckBoxes(Container container) {
         Component[] components = container.getComponents();
         for (Component component : components) {
             if (component instanceof JCheckBox) {
-                component.setFocusable(false);
-                System.out.println(component.getClass());
+                if (((JCheckBox) component).isSelected())
+                    selectedGamesList.add(((JCheckBox) component).getText());
             }
 
             if (component instanceof Container) {
@@ -94,7 +101,6 @@ public class GUI extends JFrame {
             }
         }
     }
-
 
 
     private void setFocusableFalseForAllComponents(Container container) {
@@ -110,5 +116,13 @@ public class GUI extends JFrame {
 
     public JTextField getMainTextField() {
         return mainTextField;
+    }
+
+    public List<String> getSelectedGames() {
+        return selectedGamesList;
+    }
+
+    public boolean isOrderReceived() {
+        return orderReceived;
     }
 }
