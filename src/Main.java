@@ -33,7 +33,7 @@ public class Main {
 
         try {
             //Civilization VI
-            for(File fileSize : filesCivVI){
+            for (File fileSize : filesCivVI) {
                 System.out.println(fileSize);
                 tmpTotalSize += Files.size(fileSize.toPath());
                 fileSize.delete();
