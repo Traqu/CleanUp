@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ public class GUI extends JFrame {
     final private static int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
     final private static int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
     public static final Font COMMON_FONT = new Font("Baghdad", Font.BOLD, 12);
+    public static final Color FADE_BLACK = new Color(0, 0, 0, 50);
     private JPanel textPanel = new JPanel();
     private JPanel bottomPanel = new JPanel();
     private JPanel checkboxPanel = new JPanel();
@@ -35,12 +37,12 @@ public class GUI extends JFrame {
         this.setTitle(AUTHORS_TITLE);
         this.setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
+        this.add(textPanel);
         textPanel.setSize(TEXTPANEL_WIDTH, TEXTPANEL_HEIGHT);
         textPanel.setLayout(new GridLayout());
-        this.add(textPanel);
 
-        bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.X_AXIS));
         this.add(bottomPanel);
+        bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.X_AXIS));
         bottomPanel.add(checkboxPanel);
         bottomPanel.add(buttonPanel);
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
@@ -51,7 +53,7 @@ public class GUI extends JFrame {
         mainTextField.setEditable(false);
         mainTextField.setHorizontalAlignment(0);
         mainTextField.setPreferredSize(new Dimension(0, TEXTPANEL_HEIGHT));
-        mainTextField.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createDashedBorder(new Color(0, 0, 0, 50), 1.05f, 1000, 1, false), BorderFactory.createRaisedBevelBorder()));
+        mainTextField.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createDashedBorder(FADE_BLACK, 1.05f, 1000, 1, false), BorderFactory.createRaisedBevelBorder()));
         textPanel.add(mainTextField);
 
 
@@ -62,9 +64,7 @@ public class GUI extends JFrame {
         checkboxPanel.add(Box.createVerticalStrut(5));
         checkboxPanel.add(jLabel);
         checkboxPanel.add(Box.createVerticalStrut(5));
-        checkboxPanel.add(DAYZ_CHECKBOX);
-        checkboxPanel.add(CIV_VI_CHECKBOX);
-        checkboxPanel.add(PLACEHOLDER);
+        addAllChechboxes(checkboxPanel);
         PLACEHOLDER.setEnabled(false);
         DAYZ_CHECKBOX.setEnabled(true);
 
@@ -85,20 +85,19 @@ public class GUI extends JFrame {
             removeButton.setEnabled(false);
             orderReceived = true;
         });
-
-        System.out.println(removeButton.getFont());
     }
 
     //------------------------------------------------------------------------------------------------------------------
 
-    /** EXAMPLE FONTS:
-        Yu Gothic UI
-        Dubai
-        Corbel
-        Century Schoolbook
-        Bookman Old Style
-        Bell MT
-    */
+    /**
+     * EXAMPLE FONTS:
+     * Yu Gothic UI
+     * Dubai
+     * Corbel
+     * Century Schoolbook
+     * Bookman Old Style
+     * Bell MT
+     */
 
     private void getAllSelectedCheckBoxes(Container container) {
         Component[] components = container.getComponents();
@@ -137,6 +136,25 @@ public class GUI extends JFrame {
             }
         }
     }
+
+    private void addAllChechboxes(JPanel panel) {
+        Class<? extends GUI> guiClass = this.getClass();
+        Field[] declaredFields = guiClass.getDeclaredFields();
+        for (Field declaredField : declaredFields) {
+            if (declaredField.getType().getName().contains("JCheckBox")) {
+                try {
+                    declaredField.setAccessible(true);
+                    JCheckBox checkBox = (JCheckBox) declaredField.get(this);
+                    panel.add(checkBox);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+
 
     public JTextField getMainTextField() {
         return mainTextField;
