@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Added reflection for JCheckBoxes, that allows adding them all at once to certain JPanel by using dedicated method.">
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Security fix">
+      <change afterPath="$PROJECT_DIR$/src/LogsRemoval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +136,7 @@
       <workItem from="1690473290295" duration="2000" />
       <workItem from="1690575704955" duration="4271000" />
       <workItem from="1690580027263" duration="12942000" />
-      <workItem from="1690636990209" duration="7624000" />
+      <workItem from="1690636990209" duration="12446000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -219,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690645171755</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Security fix">
+      <created>1690645507428</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690645507428</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +256,7 @@
     <MESSAGE value="Added style to the test field" />
     <MESSAGE value="Added `font to all` method" />
     <MESSAGE value="Added reflection for JCheckBoxes, that allows adding them all at once to certain JPanel by using dedicated method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added reflection for JCheckBoxes, that allows adding them all at once to certain JPanel by using dedicated method." />
+    <MESSAGE value="Security fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Security fix" />
   </component>
 </project>

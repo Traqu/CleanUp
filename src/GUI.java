@@ -30,8 +30,11 @@ public class GUI extends JFrame {
     final private JLabel jLabel = new JLabel("  Select the games for which you'd like to remove logs.");
     private boolean orderReceived = false;
 
+    private List<String> checkBoxesList = new ArrayList<>();
+
     public GUI() throws HeadlessException {
-        this.setAlwaysOnTop(true);
+
+             this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle(AUTHORS_TITLE);
@@ -87,8 +90,8 @@ public class GUI extends JFrame {
         });
     }
 
-    //------------------------------------------------------------------------------------------------------------------
 
+    //------------------------------------------------------------------------------------------------------------------
     /**
      * EXAMPLE FONTS:
      * Yu Gothic UI
@@ -150,6 +153,7 @@ public class GUI extends JFrame {
                     declaredField.setAccessible(true);
                     JCheckBox checkBox = (JCheckBox) declaredField.get(this);
                     panel.add(checkBox);
+                    checkBoxesList.add(checkBox.getText());
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
@@ -173,5 +177,9 @@ public class GUI extends JFrame {
 
     public boolean isOrderReceived() {
         return orderReceived;
+    }
+
+    public List<String> getCheckBoxesList() {
+        return checkBoxesList;
     }
 }
