@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Rollback">
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Added style to the test field">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
     </list>
@@ -128,7 +128,7 @@
       <workItem from="1690473290295" duration="2000" />
       <workItem from="1690575704955" duration="4271000" />
       <workItem from="1690580027263" duration="12942000" />
-      <workItem from="1690636990209" duration="1979000" />
+      <workItem from="1690636990209" duration="3450000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -193,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690592993679</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added style to the test field">
+      <created>1690639763683</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690639763683</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +224,7 @@
     <MESSAGE value="Made small changes &amp; added logo.png" />
     <MESSAGE value="Made small changes" />
     <MESSAGE value="Rollback" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rollback" />
+    <MESSAGE value="Added style to the test field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added style to the test field" />
   </component>
 </project>

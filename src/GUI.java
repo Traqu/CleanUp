@@ -1,8 +1,5 @@
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +10,7 @@ public class GUI extends JFrame {
     final private static int TEXTPANEL_HEIGHT = 26;
     final private static int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
     final private static int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
+    public static final Font COMMON_FONT = new Font("Baghdad", Font.BOLD, 12);
     private JPanel textPanel = new JPanel();
     private JPanel bottomPanel = new JPanel();
     private JPanel checkboxPanel = new JPanel();
@@ -52,7 +50,6 @@ public class GUI extends JFrame {
 
         mainTextField.setEditable(false);
         mainTextField.setHorizontalAlignment(0);
-        mainTextField.setFont(new Font("Baghdad", Font.BOLD, 12));
         mainTextField.setPreferredSize(new Dimension(0, TEXTPANEL_HEIGHT));
         mainTextField.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createDashedBorder(new Color(0, 0, 0, 50), 1.05f, 1000, 1, false), BorderFactory.createRaisedBevelBorder()));
         textPanel.add(mainTextField);
@@ -81,13 +78,27 @@ public class GUI extends JFrame {
         );
 
         setFocusableFalseForAllComponents(getContentPane());
+        setFontForAllComponents(getContentPane(), COMMON_FONT);
 
         removeButton.addActionListener(e -> {
             getAllSelectedCheckBoxes(getContentPane());
             removeButton.setEnabled(false);
             orderReceived = true;
         });
+
+        System.out.println(removeButton.getFont());
     }
+
+    //------------------------------------------------------------------------------------------------------------------
+
+    /** EXAMPLE FONTS:
+        Yu Gothic UI
+        Dubai
+        Corbel
+        Century Schoolbook
+        Bookman Old Style
+        Bell MT
+    */
 
     private void getAllSelectedCheckBoxes(Container container) {
         Component[] components = container.getComponents();
@@ -99,6 +110,18 @@ public class GUI extends JFrame {
 
             if (component instanceof Container) {
                 getAllSelectedCheckBoxes((Container) component);
+            }
+        }
+    }
+
+    private void setFontForAllComponents(Container container, Font font) {
+        Component[] components = container.getComponents();
+        for (Component component : components) {
+            if (component.getFont() != null) {
+                component.setFont(font);
+            }
+            if (component instanceof Container) {
+                setFontForAllComponents((Container) component, font);
             }
         }
     }
