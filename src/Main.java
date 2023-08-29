@@ -8,7 +8,9 @@ public class Main {
 
         listOfGames.add(new GameObject("DayZ", "Dayz", true, true));
         listOfGames.add(new GameObject("Civilization VI", "Firaxis Games\\Sid Meier's Civilization VI\\Logs"));
-        //TODO → add more games here...
+        listOfGames.add(new GameObject("Google Chrome", "Google\\Chrome\\User Data\\Default\\Cache\\Cache_Data"));
+
+        //TODO → add more games here ↑...
 
         listOfGames.add(new GameObject("Game request? Contact `traqu` on Discord.", "", false, false));
 
@@ -27,7 +29,7 @@ public class Main {
             LogRemover.remove(userInterface, selectedGame, listOfGames);
             sleepFor(1000);
         }
-        Main.sleepFor(0);
+        Main.sleepFor(1500);
         userInterface.getMainTextField().setText("Closing the application");
         Main.sleepFor(1500);
         System.exit(0);

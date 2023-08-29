@@ -42,4 +42,8 @@ public class GameObject {
     public File[] getFiles() {
         return files;
     }
+
+    public File getGameDirectory() {
+        return gameDirectory;
+    }
 }

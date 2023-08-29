@@ -7,14 +7,13 @@ import java.util.List;
 abstract public class LogRemover {
     public static final DecimalFormat KILOBYTES = new DecimalFormat("#.###");
     public static final DecimalFormat MEGABYTES = new DecimalFormat("#.##");
+    public static final DecimalFormat GIGABYTES = new DecimalFormat("#.##");
     static boolean anythingRemoved = false;
     static long size = 0;
     static double removedSize;
 
     static long tmpTotalSize = 0;
     static double totalSize = 0;
-
-    //static double finalTotalSize;
 
     public static void remove(GUI gui, String selectedGame, List<GameObject> listOfGames) {
         gui.getMainTextField().setText("Counting total " + selectedGame.toUpperCase() + " files size");
@@ -26,24 +25,25 @@ abstract public class LogRemover {
                 try {
                     for (File file : files) {
                         tmpTotalSize += Files.size(file.toPath());
-                        totalSize = (double) tmpTotalSize / (1024 * 1024);
                     }
+                    totalSize = (double) tmpTotalSize / (1024 * 1024);
+
                     for (File content : files) {
                         size += Files.size(content.toPath());
                         if (content.delete()) {
                             anythingRemoved = true;
                         }
                         removedSize = (double) size / (1024 * 1024);
-                        if (size < 10000) {
+
+                        if (totalSize < 1) {
                             gui.getMainTextField().setText("Removed: " + KILOBYTES.format(removedSize) + "/" + KILOBYTES.format(totalSize) + " MB of data.");
-                            Main.sleepFor(10);
-                        } else if (size > 100000) {
-                            gui.getMainTextField().setText("Removed: " + MEGABYTES.format(removedSize / 1000) + "/" + MEGABYTES.format(totalSize / 1000) + " GB of data.");
-                            Main.sleepFor(10);
-                        } else {
+                        } else if (totalSize < 1000) {
                             gui.getMainTextField().setText("Removed: " + MEGABYTES.format(removedSize) + "/" + MEGABYTES.format(totalSize) + " MB of data.");
-                            Main.sleepFor(10);
+                        } else {
+                            gui.getMainTextField().setText("Removed: " + GIGABYTES.format(removedSize / 1000) + "/" + GIGABYTES.format(totalSize / 1000) + " GB of data.");
                         }
+
+                        Main.sleepFor(7);
                     }
                 } catch (NullPointerException e) {
                     e.printStackTrace();
@@ -63,6 +63,7 @@ abstract public class LogRemover {
             totalSize = 0;
             removedSize = 0;
             tmpTotalSize = 0;
+            anythingRemoved = false;
         }
     }
 }

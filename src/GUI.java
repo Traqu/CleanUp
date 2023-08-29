@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -61,7 +62,9 @@ public class GUI extends JFrame {
         checkboxPanel.add(jLabel);
         checkboxPanel.add(Box.createVerticalStrut(5));
         for (GameObject game : listOfGames) {
-            checkboxPanel.add(game.getCheckBox());
+            if (game.getGameDirectory().exists()) {
+                checkboxPanel.add(game.getCheckBox());
+            }
         }
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/logo.png")));
