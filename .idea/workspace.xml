@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Introduced LogRemover and GameObject">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogRemover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="adjusted timings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,7 +149,7 @@
       <workItem from="1692274237645" duration="718000" />
       <workItem from="1692878150358" duration="789000" />
       <workItem from="1692904496197" duration="949000" />
-      <workItem from="1693260745662" duration="11165000" />
+      <workItem from="1693260745662" duration="11290000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -262,7 +256,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693268483749</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="CleanedUp! the code">
+      <created>1693272105472</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1693272105472</updated>
+    </task>
+    <task id="LOCAL-00017" summary="adjusted timings">
+      <created>1693272162475</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1693272162475</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +300,8 @@
     <MESSAGE value="Security fix" />
     <MESSAGE value="Prepared LogsRemovel abstract class" />
     <MESSAGE value="Introduced LogRemover and GameObject" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduced LogRemover and GameObject" />
+    <MESSAGE value="CleanedUp! the code" />
+    <MESSAGE value="adjusted timings" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjusted timings" />
   </component>
 </project>
