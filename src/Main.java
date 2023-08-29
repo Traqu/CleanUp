@@ -25,11 +25,11 @@ public class Main {
 
         for (String selectedGame : selectedGames) {
             LogRemover.remove(userInterface, selectedGame, listOfGames);
-            sleepFor(800);
+            sleepFor(1000);
         }
         Main.sleepFor(0);
         userInterface.getMainTextField().setText("Closing the application");
-        Main.sleepFor(1000);
+        Main.sleepFor(1500);
         System.exit(0);
     }
 
