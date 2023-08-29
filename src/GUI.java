@@ -1,31 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class GUI extends JFrame {
 
-    final private static String AUTHORS_TITLE = "     Created by Traqu";
+    final private static String AUTHORS_TITLE = "Logs CleanUp!                      Created by Traqu";
     final private static int TEXTPANEL_WIDTH = 310;
     final private static int TEXTPANEL_HEIGHT = 26;
     final private static int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
     final private static int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
     public static final Font COMMON_FONT = new Font("Baghdad", Font.BOLD, 12);
     public static final Color FADE_BLACK = new Color(0, 0, 0, 50);
-    private JPanel textPanel = new JPanel();
-    private JPanel bottomPanel = new JPanel();
-    private JPanel checkboxPanel = new JPanel();
-    private JPanel buttonPanel = new JPanel();
-    private JTextField mainTextField = new JTextField();
-    private JButton removeButton = new JButton("Remove");
+    private final JTextField mainTextField = new JTextField();
+    private final JButton removeButton = new JButton("Remove");
 
-    private List<String> selectedGamesList = new ArrayList<>();
+    private final List<String> selectedGamesList = new ArrayList<>();
 
-    final private JLabel jLabel = new JLabel("  Select the games for which you'd like to remove logs.");
     private boolean orderReceived = false;
-
-    private List<String> checkBoxesList = new ArrayList<>();
 
     public GUI(List<GameObject> listOfGames) throws HeadlessException {
 
@@ -35,13 +28,17 @@ public class GUI extends JFrame {
         this.setTitle(AUTHORS_TITLE);
         this.setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
+        JPanel textPanel = new JPanel();
         this.add(textPanel);
         textPanel.setSize(TEXTPANEL_WIDTH, TEXTPANEL_HEIGHT);
         textPanel.setLayout(new GridLayout());
 
+        JPanel bottomPanel = new JPanel();
         this.add(bottomPanel);
         bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.X_AXIS));
+        JPanel checkboxPanel = new JPanel();
         bottomPanel.add(checkboxPanel);
+        JPanel buttonPanel = new JPanel();
         bottomPanel.add(buttonPanel);
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
         buttonPanel.add(removeButton);
@@ -60,14 +57,14 @@ public class GUI extends JFrame {
 
 
         checkboxPanel.add(Box.createVerticalStrut(5));
+        JLabel jLabel = new JLabel("  Select the games for which you'd like to remove logs.");
         checkboxPanel.add(jLabel);
         checkboxPanel.add(Box.createVerticalStrut(5));
-        addAllChechboxes(checkboxPanel);
         for (GameObject game : listOfGames) {
-            checkboxPanel.add(game.getCheckBox()); //TODO dodałem tymczasowo gry 'TEST'
+            checkboxPanel.add(game.getCheckBox());
         }
 
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("icons/logo.png"));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("icons/logo.png")));
         this.setIconImage(logo.getImage());
 
         this.pack();
@@ -95,8 +92,6 @@ public class GUI extends JFrame {
             if (component instanceof JCheckBox) {
                 if (((JCheckBox) component).isSelected()) {
                     selectedGamesList.add(((JCheckBox) component).getText());
-//                    System.err.println(((JCheckBox) component).getText()); //TODO (TO NIE JEST TODO TYLKO WAZNY KOM)
-                            //TODO     wyswietlam zaznaczone checkboxy - tu w zasadzie jest to co robi actionListener
                 }
             }
 
@@ -130,31 +125,6 @@ public class GUI extends JFrame {
         }
     }
 
-    private void addAllChechboxes(JPanel panel) {
-        Class<? extends GUI> guiClass = this.getClass();
-        Field[] declaredFields = guiClass.getDeclaredFields();
-        List<Boolean> accessibilities = new ArrayList<>();
-
-        for (Field declaredField : declaredFields) {
-            accessibilities.add(declaredField.isAccessible());
-            declaredField.setAccessible(true);
-            if (declaredField.getType().getName().contains("JCheckBox")) {
-                try {
-                    declaredField.setAccessible(true);
-                    JCheckBox checkBox = (JCheckBox) declaredField.get(this);
-                    panel.add(checkBox);
-                    checkBoxesList.add(checkBox.getText());
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        for (int i = 0; i < declaredFields.length; i++) {
-            declaredFields[i].setAccessible(accessibilities.get(i));
-        }
-    }
-
-
     public JTextField getMainTextField() {
         return mainTextField;
     }
@@ -165,9 +135,5 @@ public class GUI extends JFrame {
 
     public boolean isOrderReceived() {
         return orderReceived;
-    }
-
-    public List<String> getCheckBoxesList() {
-        return checkBoxesList;
     }
 }
