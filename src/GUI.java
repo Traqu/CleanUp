@@ -19,22 +19,17 @@ public class GUI extends JFrame {
     private JPanel buttonPanel = new JPanel();
     private JTextField mainTextField = new JTextField();
     private JButton removeButton = new JButton("Remove");
-    private JButton fakeButton = new JButton();
 
     private List<String> selectedGamesList = new ArrayList<>();
-
-    final private JCheckBox DAYZ_CHECKBOX = new JCheckBox("DayZ", true);
-    final private JCheckBox CIV_VI_CHECKBOX = new JCheckBox("Civilization VI");
-    final private JCheckBox PLACEHOLDER = new JCheckBox("PLACEHOLDER");
 
     final private JLabel jLabel = new JLabel("  Select the games for which you'd like to remove logs.");
     private boolean orderReceived = false;
 
     private List<String> checkBoxesList = new ArrayList<>();
 
-    public GUI() throws HeadlessException {
+    public GUI(List<GameObject> listOfGames) throws HeadlessException {
 
-             this.setAlwaysOnTop(true);
+        this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle(AUTHORS_TITLE);
@@ -68,8 +63,9 @@ public class GUI extends JFrame {
         checkboxPanel.add(jLabel);
         checkboxPanel.add(Box.createVerticalStrut(5));
         addAllChechboxes(checkboxPanel);
-        PLACEHOLDER.setEnabled(false);
-        DAYZ_CHECKBOX.setEnabled(true);
+        for (GameObject game : listOfGames) {
+            checkboxPanel.add(game.getCheckBox()); //TODO dodałem tymczasowo gry 'TEST'
+        }
 
         ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("icons/logo.png"));
         this.setIconImage(logo.getImage());
@@ -92,22 +88,16 @@ public class GUI extends JFrame {
 
 
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     * EXAMPLE FONTS:
-     * Yu Gothic UI
-     * Dubai
-     * Corbel
-     * Century Schoolbook
-     * Bookman Old Style
-     * Bell MT
-     */
 
     private void getAllSelectedCheckBoxes(Container container) {
         Component[] components = container.getComponents();
         for (Component component : components) {
             if (component instanceof JCheckBox) {
-                if (((JCheckBox) component).isSelected())
+                if (((JCheckBox) component).isSelected()) {
                     selectedGamesList.add(((JCheckBox) component).getText());
+//                    System.err.println(((JCheckBox) component).getText()); //TODO (TO NIE JEST TODO TYLKO WAZNY KOM)
+                            //TODO     wyswietlam zaznaczone checkboxy - tu w zasadzie jest to co robi actionListener
+                }
             }
 
             if (component instanceof Container) {
@@ -163,8 +153,6 @@ public class GUI extends JFrame {
             declaredFields[i].setAccessible(accessibilities.get(i));
         }
     }
-
-
 
 
     public JTextField getMainTextField() {
