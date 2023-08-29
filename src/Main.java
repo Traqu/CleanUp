@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,11 +26,15 @@ public class Main {
 
         List<String> selectedGames = userInterface.getSelectedGames();
 
-        for (String selectedGame : selectedGames) {
-            LogRemover.remove(userInterface, selectedGame, listOfGames);
+        AtomicReference<Double> totalSizeRemoved = new AtomicReference<>(0.0);
+
+        for (int i = 0; i < selectedGames.size(); i++) {
+            boolean displayTotal;
+            displayTotal = selectedGames.size() != 1;
+            LogRemover.remove(userInterface, selectedGames.get(i), listOfGames, totalSizeRemoved, i == selectedGames.size() - 1, displayTotal);
             sleepFor(1000);
         }
-        Main.sleepFor(1500);
+
         userInterface.getMainTextField().setText("Closing the application");
         Main.sleepFor(1500);
         System.exit(0);

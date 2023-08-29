@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 abstract public class LogRemover {
     public static final DecimalFormat KILOBYTES = new DecimalFormat("#.###");
@@ -15,7 +16,7 @@ abstract public class LogRemover {
     static long tmpTotalSize = 0;
     static double totalSize = 0;
 
-    public static void remove(GUI gui, String selectedGame, List<GameObject> listOfGames) {
+    public static void remove(GUI gui, String selectedGame, List<GameObject> listOfGames, AtomicReference<Double> totalSizeRemoved, boolean displayTotalRemovedSize, boolean displayTotal) {
         gui.getMainTextField().setText("Counting total " + selectedGame.toUpperCase() + " files size");
         Main.sleepFor(1000);
 
@@ -59,11 +60,26 @@ abstract public class LogRemover {
                     }
                 }
             }
+
+            totalSizeRemoved.set(totalSizeRemoved.get() + removedSize);
+            anythingRemoved = false;
             size = 0;
             totalSize = 0;
             removedSize = 0;
             tmpTotalSize = 0;
-            anythingRemoved = false;
+        }
+
+        if (displayTotalRemovedSize && totalSizeRemoved.get() != 0 && displayTotal) {
+            totalSizeRemoved.set(totalSizeRemoved.get());
+            Main.sleepFor(1000);
+            if (totalSizeRemoved.get() < 1) {
+                gui.getMainTextField().setText("Removed total: " + KILOBYTES.format(totalSizeRemoved.get()) + " MB of data.");
+            } else if (totalSizeRemoved.get() < 1000) {
+                gui.getMainTextField().setText("Removed total: " + MEGABYTES.format(totalSizeRemoved.get()) + " MB of data.");
+            } else {
+                gui.getMainTextField().setText("Removed total: " + GIGABYTES.format(totalSizeRemoved.get() / 1000) + " GB of data.");
+            }
+            Main.sleepFor(2000);
         }
     }
 }

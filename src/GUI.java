@@ -1,13 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class GUI extends JFrame {
 
-    final private static String AUTHORS_TITLE = "Logs CleanUp!                      Created by Traqu";
+    final private static String APPLICATION_TITLE = " CleanUp!";
     final private static int TEXTPANEL_WIDTH = 310;
     final private static int TEXTPANEL_HEIGHT = 26;
     final private static int SCREEN_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
@@ -15,18 +14,19 @@ public class GUI extends JFrame {
     public static final Font COMMON_FONT = new Font("Baghdad", Font.BOLD, 12);
     public static final Color FADE_BLACK = new Color(0, 0, 0, 50);
     private final JTextField mainTextField = new JTextField();
-    private final JButton removeButton = new JButton("Remove");
-
+    private final JButton removeButton = new JButton("☠ Remove ☠");
+    private final JButton clickAllButton = new JButton("Select all");
     private final List<String> selectedGamesList = new ArrayList<>();
-
     private boolean orderReceived = false;
+    private boolean allSelected = false;
 
     public GUI(List<GameObject> listOfGames) throws HeadlessException {
+
 
         this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setTitle(AUTHORS_TITLE);
+        this.setTitle(APPLICATION_TITLE);
         this.setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
         JPanel textPanel = new JPanel();
@@ -41,10 +41,24 @@ public class GUI extends JFrame {
         bottomPanel.add(checkboxPanel);
         JPanel buttonPanel = new JPanel();
         bottomPanel.add(buttonPanel);
+        bottomPanel.setBackground(Color.BLACK);
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
-        buttonPanel.add(removeButton);
-        buttonPanel.setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 15));
+        buttonPanel.add(clickAllButton);
 
+        clickAllButton.setPreferredSize(new Dimension(125, 25));
+        clickAllButton.setMaximumSize(new Dimension(125, 25));
+        clickAllButton.setMinimumSize(new Dimension(125, 25));
+
+        removeButton.setPreferredSize(new Dimension(125, 25));
+        removeButton.setMaximumSize(new Dimension(125, 25));
+        removeButton.setMinimumSize(new Dimension(125, 25));
+
+        buttonPanel.add(Box.createVerticalGlue());
+        buttonPanel.add(removeButton);
+        buttonPanel.add(Box.createVerticalGlue());
+        JLabel authorsLabel = new JLabel("      created by Traqu");
+        buttonPanel.add(authorsLabel);
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
 
         mainTextField.setEditable(false);
         mainTextField.setHorizontalAlignment(0);
@@ -52,15 +66,15 @@ public class GUI extends JFrame {
         mainTextField.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createDashedBorder(FADE_BLACK, 1.05f, 1000, 1, false), BorderFactory.createRaisedBevelBorder()));
         textPanel.add(mainTextField);
 
-
         checkboxPanel.setSize(getWidth(), 100);
         checkboxPanel.setLayout(new BoxLayout(checkboxPanel, BoxLayout.Y_AXIS));
-
 
         checkboxPanel.add(Box.createVerticalStrut(5));
         JLabel jLabel = new JLabel("  Select the games for which you'd like to remove logs.");
         checkboxPanel.add(jLabel);
         checkboxPanel.add(Box.createVerticalStrut(5));
+        checkboxPanel.add(Box.createVerticalStrut(5));
+
         for (GameObject game : listOfGames) {
             if (game.getGameDirectory().exists()) {
                 checkboxPanel.add(game.getCheckBox());
@@ -78,17 +92,41 @@ public class GUI extends JFrame {
 
         setFocusableFalseForAllComponents(getContentPane());
         setFontForAllComponents(getContentPane(), COMMON_FONT);
+        authorsLabel.setFont(new Font("Baghdad", Font.ITALIC, 11));
+        authorsLabel.setForeground(Color.GRAY);
+        removeButton.setForeground(new Color(17, 14, 14));
 
         removeButton.addActionListener(e -> {
             getAllSelectedCheckBoxes(getContentPane());
             removeButton.setEnabled(false);
+            clickAllButton.setEnabled(false);
             orderReceived = true;
+        });
+
+        clickAllButton.addActionListener(e -> {
+            if (allSelected) {
+                clickAllButton.setText("Select all");
+                for (GameObject game : listOfGames) {
+                    game.getCheckBox().setSelected(false);
+                }
+                setAllSelected(false);
+            } else {
+                clickAllButton.setText("Deselect all");
+                for (GameObject game : listOfGames) {
+                    game.getCheckBox().setSelected(true);
+                }
+                setAllSelected(true);
+            }
+            for (GameObject game : listOfGames) {
+                if (!game.getCheckBox().isEnabled()) {
+                    game.getCheckBox().setSelected(false);
+                }
+            }
         });
     }
 
 
     //------------------------------------------------------------------------------------------------------------------
-
     private void getAllSelectedCheckBoxes(Container container) {
         Component[] components = container.getComponents();
         for (Component component : components) {
@@ -138,5 +176,9 @@ public class GUI extends JFrame {
 
     public boolean isOrderReceived() {
         return orderReceived;
+    }
+
+    public void setAllSelected(boolean allSelected) {
+        this.allSelected = allSelected;
     }
 }
