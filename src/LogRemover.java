@@ -15,12 +15,19 @@ abstract public class LogRemover {
 
     static long tmpTotalSize = 0;
     static double totalSize = 0;
+    static int timeBreak = 7;
+    private static final int RESTORE_TIME = timeBreak;
+    private static final int SHORT_BREAK = 1;
 
     public static void remove(GUI gui, String selectedGame, List<GameObject> listOfGames, AtomicReference<Double> totalSizeRemoved, boolean displayTotalRemovedSize, boolean displayTotal) {
         gui.getMainTextField().setText("Counting total " + selectedGame.toUpperCase() + " files size");
         Main.sleepFor(1000);
 
         for (GameObject game : listOfGames) {
+            if (selectedGame.equals("Google Chrome")) {
+                timeBreak = SHORT_BREAK;
+            }
+            System.out.println("Cleaning with time delay: " + timeBreak);
             if (game.getName().equalsIgnoreCase(selectedGame)) {
                 File[] files = game.getFiles();
                 try {
@@ -44,7 +51,7 @@ abstract public class LogRemover {
                             gui.getMainTextField().setText("Removed: " + GIGABYTES.format(removedSize / 1000) + "/" + GIGABYTES.format(totalSize / 1000) + " GB of data.");
                         }
 
-                        Main.sleepFor(7);
+                        Main.sleepFor(timeBreak);
                     }
                 } catch (NullPointerException e) {
                     e.printStackTrace();
@@ -68,6 +75,8 @@ abstract public class LogRemover {
             removedSize = 0;
             tmpTotalSize = 0;
         }
+
+        timeBreak = RESTORE_TIME;
 
         if (displayTotalRemovedSize && totalSizeRemoved.get() != 0 && displayTotal) {
             totalSizeRemoved.set(totalSizeRemoved.get());

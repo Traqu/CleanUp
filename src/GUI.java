@@ -13,10 +13,12 @@ public class GUI extends JFrame {
     final private static int SCREEN_HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
     public static final Font COMMON_FONT = new Font("Baghdad", Font.BOLD, 12);
     public static final Color FADE_BLACK = new Color(0, 0, 0, 50);
+    public static final Dimension DIMENSION = new Dimension(125, 25);
     private final JTextField mainTextField = new JTextField();
     private final JButton removeButton = new JButton("☠ Remove ☠");
     private final JButton clickAllButton = new JButton("Select all");
     private final List<String> selectedGamesList = new ArrayList<>();
+    private  final JButton removeAllButton = new JButton("Remove all");
     private boolean orderReceived = false;
     private boolean allSelected = false;
 
@@ -45,14 +47,20 @@ public class GUI extends JFrame {
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
         buttonPanel.add(clickAllButton);
 
-        clickAllButton.setPreferredSize(new Dimension(125, 25));
-        clickAllButton.setMaximumSize(new Dimension(125, 25));
-        clickAllButton.setMinimumSize(new Dimension(125, 25));
+        clickAllButton.setPreferredSize(DIMENSION);
+        clickAllButton.setMaximumSize(DIMENSION);
+        clickAllButton.setMinimumSize(DIMENSION);
 
-        removeButton.setPreferredSize(new Dimension(125, 25));
-        removeButton.setMaximumSize(new Dimension(125, 25));
-        removeButton.setMinimumSize(new Dimension(125, 25));
+        removeButton.setPreferredSize(DIMENSION);
+        removeButton.setMaximumSize(DIMENSION);
+        removeButton.setMinimumSize(DIMENSION);
 
+        removeAllButton.setPreferredSize(DIMENSION);
+        removeAllButton.setMaximumSize(DIMENSION);
+        removeAllButton.setMinimumSize(DIMENSION);
+
+        buttonPanel.add(Box.createVerticalGlue());
+        buttonPanel.add(removeAllButton);
         buttonPanel.add(Box.createVerticalGlue());
         buttonPanel.add(removeButton);
         buttonPanel.add(Box.createVerticalGlue());
@@ -101,6 +109,24 @@ public class GUI extends JFrame {
             removeButton.setEnabled(false);
             clickAllButton.setEnabled(false);
             orderReceived = true;
+        });
+
+        removeAllButton.addActionListener(e -> {
+            removeButton.setEnabled(false);
+            removeAllButton.setEnabled(false);
+            clickAllButton.setEnabled(false);
+            clickAllButton.setText("Deselect all");
+            for (GameObject game : listOfGames) {
+                game.getCheckBox().setSelected(true);
+            }
+            setAllSelected(true);
+            orderReceived = true;
+            for (GameObject game : listOfGames) {
+                if (!game.getCheckBox().isEnabled()) {
+                    game.getCheckBox().setSelected(false);
+                }
+            }
+            getAllSelectedCheckBoxes(getContentPane());
         });
 
         clickAllButton.addActionListener(e -> {

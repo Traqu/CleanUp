@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="">
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.0.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DayZ-garbage_collector/icons/logo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogRemover.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -159,7 +159,23 @@
       <workItem from="1693272198074" duration="369000" />
       <workItem from="1693320160374" duration="6283000" />
       <workItem from="1693326647324" duration="68000" />
-      <workItem from="1693327483315" duration="14696000" />
+      <workItem from="1693327483315" duration="15154000" />
+      <workItem from="1693346447245" duration="67000" />
+      <workItem from="1693346586190" duration="443000" />
+      <workItem from="1693347041409" duration="19000" />
+      <workItem from="1693348968654" duration="989000" />
+      <workItem from="1693421990567" duration="90000" />
+      <workItem from="1693443063395" duration="9000" />
+      <workItem from="1693674573929" duration="3537000" />
+      <workItem from="1693681688704" duration="11000" />
+      <workItem from="1693681726410" duration="1000" />
+      <workItem from="1694290791962" duration="1842000" />
+      <workItem from="1694534032865" duration="136000" />
+      <workItem from="1694534768848" duration="16000" />
+      <workItem from="1694608611386" duration="668000" />
+      <workItem from="1694625702098" duration="608000" />
+      <workItem from="1694798733685" duration="18000" />
+      <workItem from="1696257204420" duration="2055000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -315,7 +331,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693326503652</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added select All button &amp; tiny tweaks">
+      <created>1693342581193</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1693342581193</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Distribution - version_3.0.">
+      <created>1693342615009</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1693342615009</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +380,8 @@
     <MESSAGE value="Fixed units display. &#10;Now the user will only have checkboxes displayed that are associated with the paths present on their drive." />
     <MESSAGE value="Distribution - version_2.1." />
     <MESSAGE value="Added icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added icon" />
+    <MESSAGE value="Added select All button &amp; tiny tweaks" />
+    <MESSAGE value="Distribution - version_3.0." />
+    <option name="LAST_COMMIT_MESSAGE" value="Distribution - version_3.0." />
   </component>
 </project>
