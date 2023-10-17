@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DayZ-garbage_collector.iml" filepath="$PROJECT_DIR$/DayZ-garbage_collector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CleanUp.iml" filepath="$PROJECT_DIR$/CleanUp.iml" />
     </modules>
   </component>
 </project>

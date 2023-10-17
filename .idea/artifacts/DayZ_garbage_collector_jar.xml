@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="DayZ-garbage_collector:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/DayZ_garbage_collector_jar</output-path>
-    <root id="archive" name="DayZ-garbage_collector.jar">
-      <element id="module-output" name="DayZ-garbage_collector" />
-    </root>
-  </artifact>
-</component>

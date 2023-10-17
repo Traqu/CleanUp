@@ -107,6 +107,7 @@ public class GUI extends JFrame {
         removeButton.setForeground(new Color(17, 14, 14));
 
         removeButton.addActionListener(e -> {
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
             disableAllCheckboxes(checkboxPanel);
             getAllSelectedCheckBoxes(getContentPane());
             removeButton.setEnabled(false);
@@ -116,6 +117,7 @@ public class GUI extends JFrame {
         });
 
         removeAllButton.addActionListener(e -> {
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
             removeButton.setEnabled(false);
             removeAllButton.setEnabled(false);
             clickAllButton.setEnabled(false);
