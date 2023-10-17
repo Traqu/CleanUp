@@ -9,12 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.0.">
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogRemover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +173,9 @@
       <workItem from="1694625702098" duration="608000" />
       <workItem from="1694798733685" duration="18000" />
       <workItem from="1696257204420" duration="2055000" />
+      <workItem from="1696274441363" duration="67000" />
+      <workItem from="1697319953371" duration="814000" />
+      <workItem from="1697572331253" duration="1268000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -345,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693342615009</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added DOWNLOADS and Delete All button">
+      <created>1696274483892</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1696274483892</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,6 +389,7 @@
     <MESSAGE value="Added icon" />
     <MESSAGE value="Added select All button &amp; tiny tweaks" />
     <MESSAGE value="Distribution - version_3.0." />
-    <option name="LAST_COMMIT_MESSAGE" value="Distribution - version_3.0." />
+    <MESSAGE value="Added DOWNLOADS and Delete All button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DOWNLOADS and Delete All button" />
   </component>
 </project>

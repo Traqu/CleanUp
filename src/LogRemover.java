@@ -27,7 +27,6 @@ abstract public class LogRemover {
             if (selectedGame.equals("Google Chrome")) {
                 timeBreak = SHORT_BREAK;
             }
-            System.out.println("Cleaning with time delay: " + timeBreak);
             if (game.getName().equalsIgnoreCase(selectedGame)) {
                 File[] files = game.getFiles();
                 try {

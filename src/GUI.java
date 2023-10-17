@@ -18,7 +18,7 @@ public class GUI extends JFrame {
     private final JButton removeButton = new JButton("☠ Remove ☠");
     private final JButton clickAllButton = new JButton("Select all");
     private final List<String> selectedGamesList = new ArrayList<>();
-    private  final JButton removeAllButton = new JButton("Remove all");
+    private final JButton removeAllButton = new JButton("Remove all");
     private boolean orderReceived = false;
     private boolean allSelected = false;
 
@@ -83,6 +83,8 @@ public class GUI extends JFrame {
         checkboxPanel.add(Box.createVerticalStrut(5));
         checkboxPanel.add(Box.createVerticalStrut(5));
 
+
+        /**This loop adds checkboxes to the gui*/
         for (GameObject game : listOfGames) {
             if (game.getGameDirectory().exists()) {
                 checkboxPanel.add(game.getCheckBox());
@@ -105,8 +107,10 @@ public class GUI extends JFrame {
         removeButton.setForeground(new Color(17, 14, 14));
 
         removeButton.addActionListener(e -> {
+            disableAllCheckboxes(checkboxPanel);
             getAllSelectedCheckBoxes(getContentPane());
             removeButton.setEnabled(false);
+            removeAllButton.setEnabled(false);
             clickAllButton.setEnabled(false);
             orderReceived = true;
         });
@@ -126,6 +130,7 @@ public class GUI extends JFrame {
                     game.getCheckBox().setSelected(false);
                 }
             }
+            disableAllCheckboxes(checkboxPanel);
             getAllSelectedCheckBoxes(getContentPane());
         });
 
@@ -149,6 +154,15 @@ public class GUI extends JFrame {
                 }
             }
         });
+    }
+
+    private static void disableAllCheckboxes(JPanel checkboxPanel) {
+        Component[] components = checkboxPanel.getComponents();
+        for (Component component : components) {
+            if (component instanceof JCheckBox) {
+                component.setEnabled(false);
+            }
+        }
     }
 
 
