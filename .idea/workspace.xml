@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.1.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Disabled possibility to access checkboxes during files removal process." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +172,7 @@
       <workItem from="1696257204420" duration="2055000" />
       <workItem from="1696274441363" duration="67000" />
       <workItem from="1697319953371" duration="814000" />
-      <workItem from="1697572331253" duration="1268000" />
+      <workItem from="1697572331253" duration="1574000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -352,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696274483892</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Disabled possibility to access checkboxes during files removal process.">
+      <created>1697573903236</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1697573903236</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,6 +394,7 @@
     <MESSAGE value="Added select All button &amp; tiny tweaks" />
     <MESSAGE value="Distribution - version_3.0." />
     <MESSAGE value="Added DOWNLOADS and Delete All button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DOWNLOADS and Delete All button" />
+    <MESSAGE value="Disabled possibility to access checkboxes during files removal process." />
+    <option name="LAST_COMMIT_MESSAGE" value="Disabled possibility to access checkboxes during files removal process." />
   </component>
 </project>
