@@ -21,13 +21,14 @@ abstract public class LogRemover {
 
     public static void remove(GUI gui, String selectedGame, List<GameObject> listOfGames, AtomicReference<Double> totalSizeRemoved, boolean displayTotalRemovedSize, boolean displayTotal) {
         gui.getMainTextField().setText("Counting total " + selectedGame.toUpperCase() + " files size");
-        Main.sleepFor(1000);
+        Main.sleepFor(1275);
 
         for (GameObject game : listOfGames) {
             if (selectedGame.equals("Google Chrome")) {
                 timeBreak = SHORT_BREAK;
             }
             if (game.getName().equalsIgnoreCase(selectedGame)) {
+                game.getCheckBox().setSelected(false);
                 File[] files = game.getFiles();
                 try {
                     for (File file : files) {
@@ -87,7 +88,7 @@ abstract public class LogRemover {
             } else {
                 gui.getMainTextField().setText("Removed total: " + GIGABYTES.format(totalSizeRemoved.get() / 1000) + " GB of data.");
             }
-            Main.sleepFor(2000);
+            Main.sleepFor(1375);
         }
     }
 }
