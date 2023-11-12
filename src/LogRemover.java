@@ -9,6 +9,7 @@ abstract public class LogRemover {
     public static final DecimalFormat KILOBYTES = new DecimalFormat("#.###");
     public static final DecimalFormat MEGABYTES = new DecimalFormat("#.##");
     public static final DecimalFormat GIGABYTES = new DecimalFormat("#.##");
+    public static final String MAP_MARKERS_CACHE = new String("MapMarkersCache.json"); //this value is third party and is subject to change
     static boolean anythingRemoved = false;
     static long size = 0;
     static double removedSize;
@@ -32,26 +33,29 @@ abstract public class LogRemover {
                 File[] files = game.getFiles();
                 try {
                     for (File file : files) {
-                        tmpTotalSize += Files.size(file.toPath());
+                        if (!file.getName().equals(MAP_MARKERS_CACHE))
+                            tmpTotalSize += Files.size(file.toPath());
                     }
                     totalSize = (double) tmpTotalSize / (1024 * 1024);
 
                     for (File content : files) {
-                        size += Files.size(content.toPath());
-                        if (content.delete()) {
-                            anythingRemoved = true;
-                        }
-                        removedSize = (double) size / (1024 * 1024);
+                        if (!content.getName().equals(MAP_MARKERS_CACHE)) {
+                            size += Files.size(content.toPath());
+                            if (content.delete()) {
+                                anythingRemoved = true;
+                            }
+                            removedSize = (double) size / (1024 * 1024);
 
-                        if (totalSize < 1) {
-                            gui.getMainTextField().setText("Removed: " + KILOBYTES.format(removedSize) + "/" + KILOBYTES.format(totalSize) + " MB of data.");
-                        } else if (totalSize < 1000) {
-                            gui.getMainTextField().setText("Removed: " + MEGABYTES.format(removedSize) + "/" + MEGABYTES.format(totalSize) + " MB of data.");
-                        } else {
-                            gui.getMainTextField().setText("Removed: " + GIGABYTES.format(removedSize / 1000) + "/" + GIGABYTES.format(totalSize / 1000) + " GB of data.");
-                        }
+                            if (totalSize < 1) {
+                                gui.getMainTextField().setText("Removed: " + KILOBYTES.format(removedSize) + "/" + KILOBYTES.format(totalSize) + " MB of data.");
+                            } else if (totalSize < 1000) {
+                                gui.getMainTextField().setText("Removed: " + MEGABYTES.format(removedSize) + "/" + MEGABYTES.format(totalSize) + " MB of data.");
+                            } else {
+                                gui.getMainTextField().setText("Removed: " + GIGABYTES.format(removedSize / 1000) + "/" + GIGABYTES.format(totalSize / 1000) + " GB of data.");
+                            }
 
-                        Main.sleepFor(timeBreak);
+                            Main.sleepFor(timeBreak);
+                        }
                     }
                 } catch (NullPointerException e) {
                     e.printStackTrace();

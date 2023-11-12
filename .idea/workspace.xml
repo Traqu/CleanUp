@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.3.">
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.4.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executable/CleanUp!.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogRemover.java" afterDir="false" />
@@ -182,7 +182,9 @@
       <workItem from="1697574712614" duration="1029000" />
       <workItem from="1697575795137" duration="7000" />
       <workItem from="1697575894601" duration="13000" />
-      <workItem from="1697657884571" duration="356000" />
+      <workItem from="1697657884571" duration="658000" />
+      <workItem from="1697971222588" duration="12000" />
+      <workItem from="1699832241495" duration="348000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -380,7 +382,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697575613481</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fixed timings and added uncheck feature upon removal.">
+      <created>1697658401095</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1697658401095</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Distribution - version_3.4.">
+      <created>1697658525357</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1697658525357</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,6 +437,8 @@
     <MESSAGE value="Disabled possibility to access checkboxes during files removal process." />
     <MESSAGE value="Disabled possibility to close the application with default close operation during files removal process." />
     <MESSAGE value="Distribution - version_3.3." />
-    <option name="LAST_COMMIT_MESSAGE" value="Distribution - version_3.3." />
+    <MESSAGE value="Fixed timings and added uncheck feature upon removal." />
+    <MESSAGE value="Distribution - version_3.4." />
+    <option name="LAST_COMMIT_MESSAGE" value="Distribution - version_3.4." />
   </component>
 </project>
