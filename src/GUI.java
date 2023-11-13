@@ -1,24 +1,34 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class GUI extends JFrame {
 
-    final private static String VERSION;
-    static{
-        try {
-            BufferedReader versionReader = new BufferedReader(new FileReader("resources/version.cfg"));
-            VERSION = versionReader.readLine();
+    private final static String VERSION;
+
+    static {
+        String version = "has not been loaded properly"; // Domyślna wartość
+
+        try (InputStream inputStream = GUI.class.getResourceAsStream("version.cfg");
+             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+             BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
+
+            version = bufferedReader.readLine();
+
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
+        VERSION = version;
     }
+
+
+
+
     final private static String APPLICATION_TITLE = " CleanUp!";
     final private static int TEXTPANEL_WIDTH = 310;
     final private static int TEXTPANEL_HEIGHT = 26;
