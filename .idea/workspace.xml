@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.4.">
+    <list default="true" id="b9959dfa-df6d-4f97-83b1-c16b3256991a" name="Changes" comment="Distribution - version_3.5.1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executable/CleanUp!.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LogRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogRemover.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +182,10 @@
       <workItem from="1697575894601" duration="13000" />
       <workItem from="1697657884571" duration="658000" />
       <workItem from="1697971222588" duration="12000" />
-      <workItem from="1699832241495" duration="348000" />
+      <workItem from="1699832241495" duration="535000" />
+      <workItem from="1699832883610" duration="110000" />
+      <workItem from="1699833180225" duration="25000" />
+      <workItem from="1699874555626" duration="1671000" />
     </task>
     <task id="LOCAL-00001" summary="created path variable">
       <created>1685554055046</created>
@@ -396,7 +397,42 @@
       <option name="project" value="LOCAL" />
       <updated>1697658525357</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Fixed issue where inGame MAP_MARKERS would be deleted.">
+      <created>1699832761890</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1699832761890</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Distribution - version_3.5.">
+      <created>1699832768471</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1699832768471</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Distribution - version_3.5.">
+      <created>1699832988820</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1699832988820</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added version.cfg file and version label.">
+      <created>1699876125449</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1699876125449</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Distribution - version_3.5.1.">
+      <created>1699876232458</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699876232458</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,10 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created path variable" />
-    <MESSAGE value="edited GUI for more developed approach" />
-    <MESSAGE value="added temporary removal for CIV 6 logs &amp; sleeping method" />
-    <MESSAGE value="Made small changes &amp; added logo.png" />
     <MESSAGE value="Made small changes" />
     <MESSAGE value="Rollback" />
     <MESSAGE value="Added style to the test field" />
@@ -439,6 +471,10 @@
     <MESSAGE value="Distribution - version_3.3." />
     <MESSAGE value="Fixed timings and added uncheck feature upon removal." />
     <MESSAGE value="Distribution - version_3.4." />
-    <option name="LAST_COMMIT_MESSAGE" value="Distribution - version_3.4." />
+    <MESSAGE value="Fixed issue where inGame MAP_MARKERS would be deleted." />
+    <MESSAGE value="Distribution - version_3.5." />
+    <MESSAGE value="Added version.cfg file and version label." />
+    <MESSAGE value="Distribution - version_3.5.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Distribution - version_3.5.1." />
   </component>
 </project>
