@@ -1,11 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class GUI extends JFrame {
 
+    final private static String VERSION;
+    static{
+        try {
+            BufferedReader versionReader = new BufferedReader(new FileReader("resources/version.cfg"));
+            VERSION = versionReader.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     final private static String APPLICATION_TITLE = " CleanUp!";
     final private static int TEXTPANEL_WIDTH = 310;
     final private static int TEXTPANEL_HEIGHT = 26;
@@ -65,7 +78,9 @@ public class GUI extends JFrame {
         buttonPanel.add(removeButton);
         buttonPanel.add(Box.createVerticalGlue());
         JLabel authorsLabel = new JLabel("      created by Traqu");
+        JLabel versionLabel = new JLabel("          version " + VERSION);
         buttonPanel.add(authorsLabel);
+        buttonPanel.add(versionLabel);
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
 
         mainTextField.setEditable(false);
@@ -104,6 +119,8 @@ public class GUI extends JFrame {
         setFontForAllComponents(getContentPane(), COMMON_FONT);
         authorsLabel.setFont(new Font("Baghdad", Font.ITALIC, 11));
         authorsLabel.setForeground(Color.GRAY);
+        versionLabel.setFont(new Font("Baghdad", Font.ITALIC, 11));
+        versionLabel.setForeground(Color.GRAY);
         removeButton.setForeground(new Color(17, 14, 14));
 
         removeButton.addActionListener(e -> {
