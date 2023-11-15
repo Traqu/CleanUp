@@ -13,7 +13,6 @@ abstract public class LogRemover {
     static boolean anythingRemoved = false;
     static long size = 0;
     static double removedSize;
-
     static long tmpTotalSize = 0;
     static double totalSize = 0;
     static int timeBreak = 7;
@@ -70,6 +69,11 @@ abstract public class LogRemover {
                         gui.getMainTextField().setText("Nothing was removed");
                     }
                 }
+
+                if (game.hasMultiplePaths()) {
+                    List<File> directoryList = game.getDirectoryList();
+                    deleteDirectory(directoryList.get(0));
+                }
             }
 
             totalSizeRemoved.set(totalSizeRemoved.get() + removedSize);
@@ -95,4 +99,21 @@ abstract public class LogRemover {
             Main.sleepFor(1375);
         }
     }
+    private static void deleteDirectory(File directory) {
+        System.out.println("deleting from " + directory.getName());
+        if (directory.exists()) {
+            File[] files = directory.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (file.isDirectory()) {
+                        deleteDirectory(file);
+                    } else {
+                        file.delete();
+                    }
+                }
+            }
+            directory.delete();
+        }
+    }
+
 }

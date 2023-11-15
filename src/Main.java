@@ -6,7 +6,9 @@ public class Main {
 
     public static final GameObject DAYZ = new GameObject("DayZ", "Dayz", true, true);
     public static final GameObject CIVILIZATION_VI = new GameObject("Civilization VI", "Firaxis Games\\Sid Meier's Civilization VI\\Logs");
-    public static final GameObject GOOGLE_CHROME = new GameObject("Google Chrome", "Google\\Chrome\\User Data\\Default\\Cache\\Cache_Data");
+    public static final GameObject GOOGLE_CHROME = new GameObject("Google Chrome",
+                                                            "Google\\Chrome\\User Data\\Default\\Cache\\Cache_Data",
+                                                        "Google\\Chrome\\User Data\\Default\\Service Worker\\CacheStorage");
     public static final GameObject DOWNLOADS = new GameObject("Downloads", "Downloads", true);
 
     public static void main(String[] args) {

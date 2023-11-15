@@ -13,7 +13,7 @@ public class GUI extends JFrame {
     static {
         String version = "has not been loaded properly"; // Domyślna wartość
 
-        try (InputStream inputStream = GUI.class.getResourceAsStream("version.cfg");
+        try (InputStream inputStream = GUI.class.getResourceAsStream("version");
              InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
              BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
 
@@ -46,7 +46,6 @@ public class GUI extends JFrame {
     private boolean allSelected = false;
 
     public GUI(List<GameObject> listOfGames) throws HeadlessException {
-
 
         this.setAlwaysOnTop(true);
         this.setResizable(false);
