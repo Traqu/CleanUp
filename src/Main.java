@@ -53,3 +53,5 @@ public class Main {
         }
     }
 }
+
+//TODO add C:\Users\piotr\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage to GoogleChrome
