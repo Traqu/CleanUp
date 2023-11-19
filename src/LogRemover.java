@@ -28,7 +28,7 @@ abstract public class LogRemover {
                 timeBreak = SHORT_BREAK;
             }
             if (game.getName().equalsIgnoreCase(selectedGame)) {
-                game.getCheckBox().setSelected(false);
+//                game.getCheckBox().setSelected(false);
                 File[] files = game.getFiles();
                 try {
                     for (File file : files) {
@@ -61,6 +61,8 @@ abstract public class LogRemover {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+                game.getCheckBox().setSelected(false);
 
                 if (size == 0) {
                     if (anythingRemoved) {
