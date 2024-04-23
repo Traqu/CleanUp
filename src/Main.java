@@ -11,6 +11,7 @@ public class Main {
                                                         "Google\\Chrome\\User Data\\Default\\Service Worker\\CacheStorage");
     public static final GameObject DOWNLOADS = new GameObject("Downloads", "Downloads", true);
 
+
     public static void main(String[] args) {
 
         List<GameObject> listOfGames = new ArrayList<>();
