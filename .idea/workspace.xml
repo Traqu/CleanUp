@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36174c52-77dc-467f-8587-f63f9b56d839" name="Changes" comment="Distribution - version_4.0.">
+    <list default="true" id="36174c52-77dc-467f-8587-f63f9b56d839" name="Changes" comment="Distribution - version_4.1.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executable/CleanUp!.exe" beforeDir="false" afterPath="$PROJECT_DIR$/executable/CleanUp!.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogRemover.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,12 +19,31 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TraquPjatk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TraquPjatk/CleanUp&quot;,
+    &quot;accountId&quot;: &quot;c89a9bcf-07f8-4181-84f2-49946e5849f3&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/GUI.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2YD8G6aGeTRksQWaRa4lZLQGHBm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -32,22 +51,46 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Clean Up!.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/piotr/IdeaProjects/CleanUp/executable",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\piotr\IdeaProjects\CleanUp\executable" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\piotr\IdeaProjects\CleanUp\executable" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Clean Up!" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="CleanUp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,7 +116,22 @@
       <updated>1700048694433</updated>
       <workItem from="1700048695841" duration="622000" />
       <workItem from="1700411102214" duration="62000" />
-      <workItem from="1700434249072" duration="298000" />
+      <workItem from="1700434249072" duration="447000" />
+      <workItem from="1701297506638" duration="667000" />
+      <workItem from="1701642449743" duration="10000" />
+      <workItem from="1701965196486" duration="1590000" />
+      <workItem from="1701989356519" duration="191000" />
+      <workItem from="1708445765964" duration="590000" />
+      <workItem from="1708451518014" duration="136000" />
+      <workItem from="1708904325276" duration="4000" />
+      <workItem from="1708904428934" duration="14000" />
+      <workItem from="1709890322999" duration="201000" />
+      <workItem from="1709985772025" duration="658000" />
+      <workItem from="1710006530412" duration="32000" />
+      <workItem from="1710197011540" duration="8000" />
+      <workItem from="1710263147762" duration="13000" />
+      <workItem from="1713889923640" duration="28000" />
+      <workItem from="1716656763028" duration="301000" />
     </task>
     <task id="LOCAL-00003" summary="Adding uncommited files">
       <created>1700048713509</created>
@@ -82,7 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700048713509</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Now checkboxes are being unchecked after cleaning in certain category is over.">
+      <created>1700434687515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700434687515</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Distribution - version_4.1.">
+      <created>1700434691767</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700434691767</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +164,8 @@
     <MESSAGE value="Adding uncommited filed" />
     <MESSAGE value="Distribution - version_4.0." />
     <MESSAGE value="Adding uncommited files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding uncommited files" />
+    <MESSAGE value="Now checkboxes are being unchecked after cleaning in certain category is over." />
+    <MESSAGE value="Distribution - version_4.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Distribution - version_4.1." />
   </component>
 </project>

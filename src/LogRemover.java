@@ -9,7 +9,8 @@ abstract public class LogRemover {
     public static final DecimalFormat KILOBYTES = new DecimalFormat("#.###");
     public static final DecimalFormat MEGABYTES = new DecimalFormat("#.##");
     public static final DecimalFormat GIGABYTES = new DecimalFormat("#.##");
-    public static final String MAP_MARKERS_CACHE = new String("MapMarkersCache.json"); //this value is third party and is subject to change
+    public static final String MAP_MARKERS_CACHE = new String("MapMarkersCache.json"); //this value is third party and is subject to change//TODO replace with general json
+    public static final String ESP_FILTERS = new String("ESPFilters.json"); //this value is third party and is subject to change//TODO replace with general json
     static boolean anythingRemoved = false;
     static long size = 0;
     static double removedSize;
@@ -32,13 +33,13 @@ abstract public class LogRemover {
                 File[] files = game.getFiles();
                 try {
                     for (File file : files) {
-                        if (!file.getName().equals(MAP_MARKERS_CACHE))
+                        if (!file.getName().equals(MAP_MARKERS_CACHE) && !file.getName().equals(ESP_FILTERS)) //TODO replace with general json
                             tmpTotalSize += Files.size(file.toPath());
                     }
                     totalSize = (double) tmpTotalSize / (1024 * 1024);
 
                     for (File content : files) {
-                        if (!content.getName().equals(MAP_MARKERS_CACHE)) {
+                        if (!content.getName().equals(MAP_MARKERS_CACHE) && !content.getName().equals(ESP_FILTERS)) { //TODO replace with general json
                             size += Files.size(content.toPath());
                             if (content.delete()) {
                                 anythingRemoved = true;
